@@ -10,7 +10,7 @@
   <div class='carousel-inner' role='listbox'>
     <?php foreach($posts as $i => $post): ?>
 
-    <div class='carousel-item <?php if($i == 0) echo 'active'; ?>'>
+    <a href='<?= get_the_permalink($post); ?>' class='carousel-item <?php if($i == 0) echo 'active'; ?>'>
       <img class='img-fluid' src='<?= get_the_post_thumbnail_url($post); ?>' alt='Slide <?= $i ?>'/>
 
       <?php if($attrs['title'] || $attrs['excerpt']): ?>
@@ -23,7 +23,7 @@
         <?php endif; ?>
       </div>
       <?php endif; ?>
-    </div>
+    </a>
 
     <?php endforeach; ?>
   </div>
