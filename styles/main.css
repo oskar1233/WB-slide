@@ -1,0 +1,9 @@
+.carousel-item.active, .carousel-item-next, .carousel-item-prev {
+  display: block !important; }
+
+#wbslideSlider .carousel-item {
+  width: 100%; }
+
+#wbslideSlider img {
+  object-fit: cover;
+  height: 600px; }

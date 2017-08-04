@@ -48,15 +48,8 @@ function wbslide_save_post($post_id, $post) {
 function wbslide_slide_meta_box($post) {
   wp_nonce_field(basename(__FILE__), 'wbslide_slide_nonce');
   $checked = get_post_meta($post->ID, '_wbslide_slide', true);
-?>
 
-<p>
-  <label for="wbslide-slide"><?php _e("Include in WB-slide slider?"); ?></label>
-  <br/>
-  <input type="checkbox" name="wbslide-slide" id="wbslide-slide"<?php if($checked) echo " checked"; ?>/>
-</p>
-
-<?php
+  include('tpl/meta_box.php');
 }
 
 /**

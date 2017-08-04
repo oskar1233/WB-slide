@@ -2,6 +2,9 @@
 
 add_shortcode('wbslide_slider', 'wbslide_echo_slider');
 
+/**
+ * Echoes slider
+ */
 function wbslide_echo_slider($attrs) { 
   $posts = get_posts([
     'meta_key' => '_wbslide_slide',
@@ -10,13 +13,7 @@ function wbslide_echo_slider($attrs) {
 
   $slidesNo = count($posts);
 
-  $attrs = shortcode_atts([
-    'indicators' => true,
-    'arrows' => true,
-
-    'title' => true,
-    'excerpt' => false
-  ], $posts);
+  $attrs = shortcode_atts(get_option('wbslide_option'), $posts);
 
   include('tpl/slide.php');
 }
